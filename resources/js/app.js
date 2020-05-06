@@ -6,12 +6,13 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 let routes = [
-    { path: '/dashboard', component: require('./components/Dashboard') },
-    { path: '/profile', component: require('./components/Profile') }
+    { path: '/dashboard', component: require('./components/Dashboard').default },
+    { path: '/profile', component: require('./components/Profile').default }
 ]
 
 const router = new VueRouter({
-    routes
+    mode: 'history',
+    routes: routes
 })
 
 const app = new Vue({
